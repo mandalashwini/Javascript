@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>
+            Index
+        </title>
+        <style>
+            .menu {
+               overflow: hidden;
+               background-color: #070a07;
+                 font-family: Arial;
+                 width: 100%;
+                 height:50px;
+                 padding-left: 15px;
+                 padding-top:10px;
+            }
+            .menu a
+            {
+                float: left;
+                font-size: 25px;
+                text-decoration-color: white;
+                padding: 10px;
+                text-align: center;
+                color: white;
+                text-align: right;
+            
+            }
+            .c_signup
+            {
+                background-color: white;
+                opacity: 0.9;
+                width:500px;
+                height: 800px;
+                margin-top: 50px;
+                margin-left: 400px;
+                padding-left: 20px;
+                background-image: url(i2.jpeg);
+                  border-radius: 40px;
+        
+            }
+            .c_signin
+            {
+                background-color: white;
+                opacity: 0.9;
+                width:500px;
+                height: 300px;
+                margin-top: 20px;
+                margin-left: 400px;
+                padding-top: 50px;
+                padding-left: 20px;
+                border-color:red;
+                background-image: url(i2.jpeg);
+                border-radius: 40px;
+        
+            }
+            label{
+                text-align: left;
+                float: left;
+            }
+            #textboxalign
+            {
+                 margin-left: 200px;
+                 width: 50%;
+                 height: 30px; 
+                 border-radius: 5px;
+            }
+           input[type=radio]
+           {
+            margin-left: 130px;
+            padding-left: 150px;
+          
+
+           }
+           input[type=submit],input[type=reset]
+           {
+               background-color: black;
+               width: 90px;
+               height: 40px;
+               color: white;
+               margin-left: 100px;
+               border-radius: 20px;     
+               
+           }
+           input[type="reset"]:hover
+           {
+            background-color: rgb(13, 32, 75)
+           }
+           input[type="submit"]:hover
+           {
+            background-color: rgb(13, 32, 75)
+           }
+           .container
+           {
+            padding: 10px;
+           }
+           .head_align
+           {
+               padding-left: 200px; 
+           }
+
+        </style>
+    </head>
+    <body bgcolor="grey"></body>
+        <h1><b>Cuelogic</b></h1>
+        <div class="menu">
+            <a href="#Home ">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="#div_signin">Sign In</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="#div_signup">Sign Up</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+        <div id="container" class="container">
+                <div id="div_signup" class="c_signup">
+                    <br /><br />
+                    <div class="head_align">
+                    <h2><b>Sign Up</b></h2><br />
+                    </div>
+                    <label >First Name:</label>
+                    <input id="textboxalign" type="text" name="firstname" placeholder="  first name" ><br /><br />
+                    <label >Last Name:</label>
+                    <input id="textboxalign" type="text" name="lastname" placeholder="  last name" ><br /><br />
+                    <label >Address:</label>
+                    <input id="textboxalign" type="text" name="address" placeholder="  address" ><br /><br />
+                    <label >Mb Number:</label>
+                    <input id="textboxalign" type="number" name="mobilenumber" placeholder=" +91" ><br /><br />
+                    <label >Gender:</label>
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="female">Female<br /><br />
+                    <label >Date of Birth:</label>
+                    <input id="textboxalign" type="date" name="dob" ><br /><br />
+                    <label >Email Id:</label>
+                    <input  id="textboxalign" type="text" name="emailid" placeholder="  email id" ><br /><br />
+                    <label >Profession:</label>
+                    <input  id="textboxalign" type="text" name="profession" placeholder="  eg student" ><br /><br />
+                    <label >Password:</label>
+                    <input  id="textboxalign" type="password" name="password" placeholder="  enter password"><br /><br /> 
+                    <label >Re-enter password:</label>
+                    <input id="textboxalign"  type="password" name="password" placeholder="  enter password"><br /><br /> 
+                    <input type="submit" name="signup" value="Sign Up">
+                    <input type="reset" name="reset" value="Reset">
+                </div>
+                <br /><br /><br />
+                <div id="div_signin" class="c_signin">
+                        <div class="head_align">
+                        <h2><b>Sign Up</b></h2><br />
+                        </div>
+                        <label>Email id:</label>
+                        <input id="textboxalign" type="text" name="emailid" placeholder="email id" ><br /><br />
+                        <label>Password:</label>
+                        <input id="textboxalign" type="password" name="password" placeholder=" password"><br /><br /> <br />
+                        <input type="submit" name="signin" value="Sign In">
+                        <input type="reset" name="signup" value="Sign Up">
+                </div>
+        </div>
+
+        </ul>
+        <body>
+</html>
