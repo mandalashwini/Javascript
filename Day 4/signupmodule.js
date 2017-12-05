@@ -1,6 +1,6 @@
 var signup_module = (function(){
     var fname,lname, address,mobilenumber,gender,dob,emailid, profession,  password, reenterpassword;
-    var emailvalid;
+    var emailvalid,success;
     console.log("in getData ");
         
         var fetchDetails = function (){
@@ -10,7 +10,7 @@ var signup_module = (function(){
             lname=document.getElementById('lastname').value;
             address=document.getElementById('address').value;
             mobilenumber=document.getElementById('mobilenumber').value;
-            gender=document.getElementById('gender').value;
+            gender=document.getElementById('gender').checked;
             emailid=document.getElementById('emailid').value;
             profession=document.getElementById('profession').value;
             password=document.getElementById('password').value;
@@ -69,15 +69,26 @@ var signup_module = (function(){
                 emailvalid=true;
 
             }
+            if(validate_mobilenumber())
+            {
+               valid_mbn=true;
+            }
+            if(validate_prof())
+            {
+                valid_prof=true;
+            }
+            if(password.localeCompare(ppass)==0)
+            {
+                success=true;
+            }
             else
             {
-                alert("Enter valid email Id..");
-                return;
-                
+                alert("re entered password not match");  
             }
-            
-            
-
+            if((gender[0].checked==false) && (gender[0].checked==false) )
+            {
+                alert("select gender");
+            }
         }
 
         function validate_email()
@@ -91,9 +102,38 @@ var signup_module = (function(){
             }
             else
             {
+                alert("Enter valid email Id..");
                 return false;
             }
         }
+        function validate_mobilenumber()
+        {
+            var phoneno = /^\d{10}$/;  
+            if(mobilenumber.match(phoneno))
+            {
+                return true;  
+            }
+             else  
+              {  
+                alert("Enter correct contact number");  
+                 return false;  
+               }  
+          
+        }
+        function validate_prof()
+        {
+            if(profession.localeCompare("student")==0||profession.localeCompare("student")==0)
+            {
+                return true;
+            }
+            else
+            {
+                alert("Enter profession student or teacher");
+                return false;
+            }
+
+        }
+
 
         return {
             fetchDetails: fetchDetails
