@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>
+            Index
+        </title>
+        <style>
+            .menu {
+               overflow: hidden;
+               background-color: #070a07;
+                 font-family: Arial;
+                 width: 100%;
+                 height:50px;
+                 padding-left: 15px;
+                 padding-top:10px;
+            }
+            .menu a
+            {
+                float: left;
+                font-size: 25px;
+                text-decoration-color: white;
+                padding: 10px;
+                text-align: center;
+                color: white;
+                text-align: right;
+            
+            }
+            .c_signup
+            {
+                background-color: white;
+                opacity: 0.9;
+                width:500px;
+                height: 800px;
+                margin-top: 50px;
+                margin-left: 400px;
+                padding-left: 20px;
+                background-image: url(i2.jpeg);
+                  border-radius: 40px;
+                 
+        
+            }
+            .c_signin
+            {
+                background-color: white;
+                opacity: 0.9;
+                width:500px;
+                height: 300px;
+                margin-top: 20px;
+                margin-left: 400px;
+                padding-top: 50px;
+                padding-left: 20px;
+                border-color:red;
+                background-image: url(i2.jpeg);
+                border-radius: 40px;
+        
+            }
+            label{
+                text-align: left;
+                float: left;
+            }
+            .textboxalign
+            {
+                 margin-left: 200px;
+                 width: 50%;
+                 height: 30px; 
+                 border-radius: 5px;
+            }
+           input[type=radio]
+           {
+            margin-left: 130px;
+            padding-left: 150px;
+          
+
+           }
+           input[type=submit],input[type=reset]
+           {
+               background-color: black;
+               width: 90px;
+               height: 40px;
+               color: white;
+               margin-left: 100px;
+               border-radius: 20px;     
+               
+           }
+           input[type="reset"]:hover
+           {
+            background-color: green;
+           }
+           input[type="submit"]:hover
+           {
+            background-color:green;
+           }
+           .container
+           {
+            padding: 10px;
+           }
+           .head_align
+           {
+               padding-left: 200px; 
+           }
+           a:hover{
+               background-color: green;
+           }
+        </style>
+        <script>
+            function initial_load()
+            {
+                document.getElementById('div_signup').style.display="block";
+                document.getElementById('div_signin').style.display="none";
+                
+                
+            }
+            function signin()
+            {
+                document.getElementById('div_signup').style.display="none";
+                document.getElementById('div_signin').style.display="block";
+                
+                
+            }
+            
+            function signup()
+            {
+                document.getElementById('div_signup').style.display="block";
+                document.getElementById('div_signin').style.display="none";
+               
+            }
+            
+            </script>
+            <script src="signupmodule.js">
+             </script>
+    </head>
+    <body bgcolor="grey" onload="initial_load()"></body>
+        <h1><b>Cuelogic</b></h1>
+        <div class="menu">
+            <a href="#Home" onclick="signin()">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="#div_signin" onclick="signin()">Sign In</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="#div_signup" onclick="signup()">Sign Up</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+        <div id="container" class="container">
+                <div id="div_signup" class="c_signup">
+                    <br /><br />
+                    <div class="head_align">
+                    <h2><b>Sign Up</b></h2><br />
+                    </div>
+                    <label >First Name:</label>
+                    <input class="textboxalign" type="text"  id="firstname" placeholder="  first name" ><br /><br />
+                    <label >Last Name:</label>
+                    <input class="textboxalign" type="text" id="lastname" placeholder="  last name" ><br /><br />
+                    <label >Address:</label>
+                    <input class="textboxalign" type="text" id="address" placeholder="  address" ><br /><br />
+                    <label >Mb Number:</label>
+                    <input class="textboxalign" type="number" id="mobilenumber" placeholder=" +91" ><br /><br />
+                    <label >Gender:</label>
+                    <input type="radio" id="gender" value="male">Male
+                    <input type="radio" id="gender" value="female">Female<br /><br />
+                    <label >Email Id:</label>
+                    <input  class="textboxalign" type="text" id="emailid" placeholder="  email id" ><br /><br />
+                    <label >Profession:</label>
+                    <input  class="textboxalign" type="text" id="profession" placeholder="  eg student" ><br /><br />
+                    <label >Password:</label>
+                    <input  class="textboxalign" type="password" id="password" placeholder="  enter password"><br /><br /> 
+                    <label >Re-enter password:</label>
+                    <input class="textboxalign"  type="password" id="rpassword" placeholder="  enter password"><br /><br /> 
+                    <input type="submit" id="signup" value="Sign Up" onclick="signup_module.fetchDetails()">
+                    <input type="reset" id="reset" value="Reset" onclick="fun()">
+                </div>
+                <br /><br /><br />
+                <div id="div_signin" class="c_signin">
+                        <div class="head_align">
+                        <h2><b>Sign In</b></h2><br />
+                        </div>
+                        <label>Email id:</label>
+                        <input class="textboxalign" type="text" name="emailid" placeholder="email id" ><br /><br />
+                        <label>Password:</label>
+                        <input class="textboxalign" type="password" name="password" placeholder=" password"><br /><br /> <br />
+                        <input type="submit" name="signin" value="Sign In">
+                        <input type="reset" name="signup" value="Sign Up">
+                </div>
+        </div>
+
+        </ul>
+        <body>
+</html>
