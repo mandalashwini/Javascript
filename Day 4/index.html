@@ -7,40 +7,28 @@
         
         
         <script>
-            function initial_load()
-            {
-                document.getElementById('div_signup').style.display="block";
-                document.getElementById('div_signin').style.display="none";
-                
-                
-            }
-            function signin()
-            {
-                document.getElementById('div_signup').style.display="none";
-                document.getElementById('div_signin').style.display="block";
-                
-                
-            }
+          
             
-            function signup()
-            {
-                document.getElementById('div_signup').style.display="block";
-                document.getElementById('div_signin').style.display="none";
-               
-            }
             
             </script>
             <script src="signupmodule.js">
              </script>
     </head>
-    <body bgcolor="grey" onload="initial_load()"></body>
+    <body bgcolor="grey" onload="init_load.initial_load()"></body>
         <h1><b>Cuelogic</b></h1>
-        <div class="menu">
-            <a href="#Home" onclick="signin()">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
-            <a href="#div_signin" onclick="signin()">Sign In</a>  &nbsp; &nbsp; &nbsp; &nbsp;
-            <a href="#div_signup" onclick="signup()">Sign Up</a>  &nbsp; &nbsp; &nbsp; &nbsp;
-        </div>
+        
         <div id="container" class="container">
+                <div class="menu" id="div1">
+                        <a href="#Home" onclick="init_load.signin()">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="#div_signin" id="teacher" onclick="init_load.signin()">Sign In</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="#div_signup" onclick="init_load.signup()">Sign Up</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div class="menu" id="user_header">
+                            <a href="#Home" onclick="signin_module.personali_details()">Home</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href="#div_signin" id="teacher" onclick="init_load.signin()">Teacher</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href="#div_signup" onclick="init_load.signup()">EditProfile</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href="#div_logout"  onclick="init_load.initial_load()">Logout</a>
+                        </div>
                 <div id="div_signup" class="c_signup">
                     <br /><br />
                     <div class="head_align">
@@ -55,8 +43,10 @@
                     <label >Mb Number:</label>
                     <input class="textboxalign" type="number" id="mobilenumber" placeholder=" +91" ><br /><br />
                     <label >Gender:</label>
-                    <input type="radio" id="gender" value="male">Male
-                    <input type="radio" id="gender" value="female">Female<br /><br />
+                    <select  class="textboxalign" id=gender>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select><br /><br />
                     <label >Email Id:</label>
                     <input  class="textboxalign" type="text" id="emailid" placeholder="  email id" ><br /><br />
                     <label >Profession:</label>
@@ -66,21 +56,29 @@
                     <label >Re-enter password:</label>
                     <input class="textboxalign"  type="password" id="rpassword" placeholder="  enter password"><br /><br /> 
                     <input type="submit" id="signup" value="Sign Up" onclick="signup_module.fetchDetails()">
-                    <input type="reset" id="reset" value="Reset" onclick="fun()">
+                    <input type="submit" id="reset" value="Cancel" onclick="signup_module.reset()">
                 </div>
                 <br /><br /><br />
+                
                 <div id="div_signin" class="c_signin">
+                        
                         <div class="head_align">
                         <h2><b>Sign In</b></h2><br />
                         </div>
                         <label>Email id:</label>
-                        <input class="textboxalign" type="text" name="emailid" placeholder="email id" ><br /><br />
+                        <input class="textboxalign" type="text" id="s_emailid" placeholder="email id" ><br /><br />
                         <label>Password:</label>
-                        <input class="textboxalign" type="password" name="password" placeholder=" password"><br /><br /> <br />
-                        <input type="submit" name="signin" value="Sign In">
-                        <input type="reset" name="signup" value="Sign Up">
-                </div>
-        </div>
+                        <input class="textboxalign" type="password" id="s_password" placeholder=" password"><br /><br /> <br />
+                        <input type="submit" name="signin" value="Sign In" onclick="signin_module.signin();">
+                        <input type="reset" name="signup" value="Sign Up" onclick="init_load.signup();">
+                 </div>
+
+                 <div id="show_data">
+                     <h1>Welcome!</h1>  
+                     </div>
+                 
+                
+            </div>
 
         </ul>
         <body>
